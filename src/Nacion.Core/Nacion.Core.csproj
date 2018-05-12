@@ -67,6 +67,8 @@
     <Compile Include="Credito.cs" />
     <Compile Include="Cuota.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ResultadoSimulacion.cs" />
+    <Compile Include="InfoGeneral.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Nacion.DataLayer\Nacion.DataLayer.csproj">
