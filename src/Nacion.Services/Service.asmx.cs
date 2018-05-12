@@ -1,6 +1,5 @@
-﻿using System;
-using System.Data;
-using System.Web;
+﻿using System.Data;
+using System.Globalization;
 using System.Web.Services;
 
 using Nacion.Core;
@@ -44,7 +43,7 @@ namespace Nacion.Services
         [WebMethod]
         public string GetTotalPagado()
         {
-            return Credito.Instancia.GetTotalPagado().ToString();
+            return Credito.Instancia.GetTotalPagado().ToString(CultureInfo.InvariantCulture);
         }
 
         /// <summary>
@@ -74,7 +73,7 @@ namespace Nacion.Services
         [WebMethod]
         public string GetRestoPagar()
         {
-            return Credito.Instancia.GetRestoAPagar().ToString();
+            return Credito.Instancia.GetRestoAPagar().ToString(CultureInfo.InvariantCulture);
         }
 
         /// <summary>
