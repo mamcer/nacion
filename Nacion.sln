@@ -3,15 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27428.2043
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nacion.Test", "Nacion.Test\Nacion.Test.csproj", "{6E9EED4B-98A7-44E1-BCC1-64027944F266}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nacion.Test", "src\Nacion.Test\Nacion.Test.csproj", "{6E9EED4B-98A7-44E1-BCC1-64027944F266}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nacion.Core", "Nacion.Core\Nacion.Core.csproj", "{F6A3B1DA-1FF8-4272-A744-C5408347A260}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nacion.Core", "src\Nacion.Core\Nacion.Core.csproj", "{F6A3B1DA-1FF8-4272-A744-C5408347A260}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nacion.DataLayer", "Nacion.DataLayer\Nacion.DataLayer.csproj", "{713276D9-219F-4BF1-B1DF-0407A7BAFF69}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nacion.DataLayer", "src\Nacion.DataLayer\Nacion.DataLayer.csproj", "{713276D9-219F-4BF1-B1DF-0407A7BAFF69}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nacion.WebUI", "Nacion.WebUI\Nacion.WebUI.csproj", "{42681ABF-E964-4248-9246-8150D9017EB5}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nacion.WebUI", "src\Nacion.WebUI\Nacion.WebUI.csproj", "{42681ABF-E964-4248-9246-8150D9017EB5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nacion.Services", "Nacion.Services\Nacion.Services.csproj", "{B1B6AE92-A732-4C11-B28B-CEF662E97406}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nacion.Services", "src\Nacion.Services\Nacion.Services.csproj", "{B1B6AE92-A732-4C11-B28B-CEF662E97406}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
