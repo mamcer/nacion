@@ -13,13 +13,6 @@ namespace Nacion.Test
     [TestClass]
     public class NacionTest
     {
-        public NacionTest()
-        {
-            //
-            // TODO: Add constructor logic here
-            //
-        }
-
         private TestContext testContextInstance;
 
         /// <summary>
@@ -130,7 +123,7 @@ namespace Nacion.Test
         public void TestInfoGeneral()
         {
             InfoGeneral info = Credito.Instancia.GetInfoGeneral();
-            Assert.AreEqual(info.CBU, "01100181 - 30001809148651", "Info general inválida.");
+            Assert.AreEqual(info.Cbu, "01100181 - 30001809148651", "Info general inválida.");
         }
 
         [TestMethod]

@@ -1,5 +1,4 @@
 ﻿using System;
-
 using Nacion.DataLayer;
 
 namespace Nacion.Core
@@ -9,8 +8,6 @@ namespace Nacion.Core
     /// </summary>
     public sealed class Cuota
     {
-        #region public properties
-
         public int Nro
         {
             get;
@@ -47,22 +44,12 @@ namespace Nacion.Core
             set;
         }
 
-        public decimal Total
-        {
-            get
-            {
-                return this.Capital + this.Interes + this.Cargos + this.Impuestos;
-            }
-        }
+        public decimal Total => Capital + Interes + Cargos + Impuestos;
 
         public StatusCuota Status
         {
             get;
             set;
         }
-
-        #endregion
-
-
     }
 }
