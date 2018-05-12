@@ -2,6 +2,7 @@
 using System.Data;
 using System.Data.SqlClient;
 using System.Configuration;
+using System.Globalization;
 
 namespace Nacion.DataLayer
 {
@@ -10,51 +11,28 @@ namespace Nacion.DataLayer
     /// </summary>
     internal class SqlServerDataLayer : IDataLayerBase
     {
-        #region private members
-
-        private string connectionString;
-
-        #endregion
-
-        #region constructor
-
         public SqlServerDataLayer()
         {
             if (ConfigurationManager.ConnectionStrings["BDNacion"] != null)
             {
-                this.connectionString = ConfigurationManager.ConnectionStrings["BDNacion"].ConnectionString;
+                ConnectionString = ConfigurationManager.ConnectionStrings["BDNacion"].ConnectionString;
             }
         }
 
-        #endregion
-
-        #region public properties
-
-        public string ConnectionString
-        {
-            get
-            {
-                return this.connectionString;
-            }
-            set
-            {
-                this.connectionString = value;
-            }
-        }
-
-        #endregion
-
-        #region IDataLayerBase Members
+        public string ConnectionString { get; set; }
 
         private object GetFirstResult(string spName)
         {
             using (SqlConnection conn = new SqlConnection(ConnectionString))
             {
                 conn.Open();
-                SqlCommand command = new SqlCommand();
-                command.Connection = conn;
-                command.CommandType = System.Data.CommandType.StoredProcedure;
-                command.CommandText = spName;
+                SqlCommand command = new SqlCommand
+                {
+                    Connection = conn,
+                    CommandType = CommandType.StoredProcedure,
+                    CommandText = spName
+                };
+
                 DataTable dt = new DataTable("Result");
                 SqlDataAdapter sqlAdapter = new SqlDataAdapter(command);
                 sqlAdapter.Fill(dt);
@@ -62,10 +40,8 @@ namespace Nacion.DataLayer
                 {
                     return dt.Rows[0][0];
                 }
-                else
-                {
-                    return null;
-                }
+
+                return null;
             }
         }
 
@@ -74,10 +50,13 @@ namespace Nacion.DataLayer
             using (SqlConnection conn = new SqlConnection(ConnectionString))
             {
                 conn.Open();
-                SqlCommand command = new SqlCommand();
-                command.Connection = conn;
-                command.CommandType = System.Data.CommandType.StoredProcedure;
-                command.CommandText = "GetAllFees";
+                SqlCommand command = new SqlCommand
+                {
+                    Connection = conn,
+                    CommandType = CommandType.StoredProcedure,
+                    CommandText = "GetAllFees"
+                };
+
                 DataTable dt = new DataTable("results");
                 SqlDataAdapter sqlAdapter = new SqlDataAdapter(command);
                 sqlAdapter.Fill(dt);
@@ -90,10 +69,13 @@ namespace Nacion.DataLayer
             using (SqlConnection conn = new SqlConnection(ConnectionString))
             {
                 conn.Open();
-                SqlCommand command = new SqlCommand();
-                command.Connection = conn;
-                command.CommandType = System.Data.CommandType.StoredProcedure;
-                command.CommandText = "GetNextFee";
+                SqlCommand command = new SqlCommand
+                {
+                    Connection = conn,
+                    CommandType = CommandType.StoredProcedure,
+                    CommandText = "GetNextFee"
+                };
+
                 DataTable dt = new DataTable("results");
                 SqlDataAdapter sqlAdapter = new SqlDataAdapter(command);
                 sqlAdapter.Fill(dt);
@@ -101,10 +83,8 @@ namespace Nacion.DataLayer
                 {
                     return dt.Rows[0];
                 }
-                else
-                {
-                    return null;
-                }
+
+                return null;
             }
         }
 
@@ -115,10 +95,8 @@ namespace Nacion.DataLayer
             {
                 return (decimal)obj;
             }
-            else
-            {
-                return 0;
-            }
+
+            return 0;
         }
 
         public DateTime GetUltimoVencimientoActual()
@@ -128,10 +106,8 @@ namespace Nacion.DataLayer
             {
                 return (DateTime)obj;
             }
-            else
-            {
-                return DateTime.MinValue;
-            }
+
+            return DateTime.MinValue;
         }
 
         public decimal GetTotalPagado()
@@ -141,10 +117,8 @@ namespace Nacion.DataLayer
             {
                 return (decimal)obj;
             }
-            else
-            {
-                return 0;
-            }
+
+            return 0;
         }
 
         public int GetCantidadCuotasPagas()
@@ -159,10 +133,8 @@ namespace Nacion.DataLayer
             {
                 return (int)obj;
             }
-            else
-            {
-                return 0;
-            }
+
+            return 0;
         }
 
         public DateTime GetPrimerVencimientoOriginal()
@@ -172,10 +144,8 @@ namespace Nacion.DataLayer
             {
                 return (DateTime)obj;
             }
-            else
-            {
-                return DateTime.MinValue;
-            }
+
+            return DateTime.MinValue;
         }
 
         public DateTime GetUltimoVencimientoOriginal()
@@ -185,10 +155,8 @@ namespace Nacion.DataLayer
             {
                 return (DateTime)obj;
             }
-            else
-            {
-                return DateTime.MinValue;
-            }
+
+            return DateTime.MinValue;
         }
 
         public DataRow GetInfoGeneral()
@@ -196,10 +164,13 @@ namespace Nacion.DataLayer
             using (SqlConnection conn = new SqlConnection(ConnectionString))
             {
                 conn.Open();
-                SqlCommand command = new SqlCommand();
-                command.Connection = conn;
-                command.CommandType = System.Data.CommandType.StoredProcedure;
-                command.CommandText = "GetGeneralInfo";
+                SqlCommand command = new SqlCommand
+                {
+                    Connection = conn,
+                    CommandType = CommandType.StoredProcedure,
+                    CommandText = "GetGeneralInfo"
+                };
+
                 DataTable dt = new DataTable("results");
                 SqlDataAdapter sqlAdapter = new SqlDataAdapter(command);
                 sqlAdapter.Fill(dt);
@@ -207,10 +178,8 @@ namespace Nacion.DataLayer
                 {
                     return dt.Rows[0];
                 }
-                else
-                {
-                    return null;
-                }
+
+                return null;
             }
         }
 
@@ -219,10 +188,13 @@ namespace Nacion.DataLayer
             using (SqlConnection conn = new SqlConnection(ConnectionString))
             {
                 conn.Open();
-                SqlCommand command = new SqlCommand();
-                command.Connection = conn;
-                command.CommandType = System.Data.CommandType.StoredProcedure;
-                command.CommandText = "GetSpecificFee";
+                SqlCommand command = new SqlCommand
+                {
+                    Connection = conn,
+                    CommandType = CommandType.StoredProcedure,
+                    CommandText = "GetSpecificFee"
+                };
+
                 command.Parameters.Add(new SqlParameter("Nro", nro));
                 DataTable dt = new DataTable("results");
                 SqlDataAdapter sqlAdapter = new SqlDataAdapter(command);
@@ -231,10 +203,8 @@ namespace Nacion.DataLayer
                 {
                     return dt.Rows[0];
                 }
-                else
-                {
-                    return null;
-                }
+
+                return null;
             }
         }
 
@@ -243,10 +213,13 @@ namespace Nacion.DataLayer
             using (SqlConnection conn = new SqlConnection(ConnectionString))
             {
                 conn.Open();
-                SqlCommand command = new SqlCommand();
-                command.Connection = conn;
-                command.CommandType = System.Data.CommandType.StoredProcedure;
-                command.CommandText = "ChangeFeeStatus";
+                SqlCommand command = new SqlCommand
+                {
+                    Connection = conn,
+                    CommandType = CommandType.StoredProcedure,
+                    CommandText = "ChangeFeeStatus"
+                };
+
                 command.Parameters.Add(new SqlParameter("Nro", nro));
                 command.Parameters.Add(new SqlParameter("Status", status));
                 command.ExecuteNonQuery();
@@ -255,7 +228,7 @@ namespace Nacion.DataLayer
 
         public string[] Simular(decimal dinero)
         {
-            DataTable dt = this.GetCuotas();
+            DataTable dt = GetCuotas();
             string[] result = null;
             if (dt.Rows.Count > 0)
             {
@@ -303,10 +276,10 @@ namespace Nacion.DataLayer
                 result = new string[6];
                 result[0] = Convert.ToString(payedFees);
                 result[1] = ((DateTime)dt.Rows[dt.Rows.Count - forwarded - payedFees - 1][DataLayerConstants.VENCIMIENTO]).ToShortDateString();
-                result[2] = Convert.ToString(interest);
-                result[3] = Convert.ToString(main);
+                result[2] = Convert.ToString(interest, CultureInfo.InvariantCulture);
+                result[3] = Convert.ToString(main, CultureInfo.InvariantCulture);
                 result[4] = Convert.ToString(nextFee);
-                result[5] = Convert.ToString(rest);
+                result[5] = Convert.ToString(rest, CultureInfo.InvariantCulture);
             }
             return result;
         }
@@ -318,10 +291,8 @@ namespace Nacion.DataLayer
             {
                 return (DateTime)obj;
             }
-            else
-            {
-                return DateTime.MinValue;
-            }
+
+            return DateTime.MinValue;
         }
 
         public int GetCantidadCuotasAdelantadas()
@@ -331,12 +302,8 @@ namespace Nacion.DataLayer
             {
                 return (int)obj;
             }
-            else
-            {
-                return 0;
-            }
-        }
 
-        #endregion
+            return 0;
+        }
     }
 }

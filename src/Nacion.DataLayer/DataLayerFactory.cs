@@ -2,35 +2,33 @@
 
 namespace Nacion.DataLayer
 {
-    public enum DataLayerType { SqlServer};
+    public enum DataLayerType
+    {
+        SqlServer
+    }
+
     /// <summary>
     /// Esta clase permite crear cada una de las clases DataLayer.
     /// </summary>
     public sealed class DataLayerFactory
     {
-        #region private members
-        private static DataLayerFactory instancia;
-        #endregion
+        private static DataLayerFactory _instancia;
 
-        #region constructor
         private DataLayerFactory() { }
-        #endregion
 
-        #region public properties
         public static DataLayerFactory Instancia
         {
             get
             {
-                if (instancia == null)
+                if (_instancia == null)
                 {
-                    instancia = new DataLayerFactory();
+                    _instancia = new DataLayerFactory();
                 }
-                return instancia;
+
+                return _instancia;
             }
         }
-        #endregion
 
-        #region public methods
         public IDataLayerBase GetDataLayer(DataLayerType tipo)
         {
             switch (tipo)
@@ -41,10 +39,9 @@ namespace Nacion.DataLayer
                     }
                 default:
                     {
-                        throw new Exception(string.Format("tipo de DataLayer no reconocido:{0}", tipo));
+                        throw new Exception($"tipo de DataLayer no reconocido:{tipo}");
                     }
             }
         }
-        #endregion
     }
 }
