@@ -1,22 +1,20 @@
 ﻿using System;
-using System.Web;
 using System.Web.UI;
-using System.Web.UI.WebControls;
 
 namespace Nacion.WebUI
 {
-    public partial class Simulador : System.Web.UI.Page
+    public partial class Simulador : Page
     {
-        private NacionService.Service service = new Nacion.WebUI.NacionService.Service();
+        private readonly NacionService.Service _service = new NacionService.Service();
 
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!Page.IsPostBack)
             {
-                Nacion.WebUI.NacionService.Cuota cuota = this.service.GetSiguienteCuota();
+                var cuota = _service.GetSiguienteCuota();
                 decimal total = cuota.Capital + cuota.Interes + cuota.Cargos + cuota.Impuestos;
-                lblMontoSiguienteCuota.Text = string.Format("{0:c}", total);
-                lblVencimientoSiguienteCuota.Text = this.service.GetSiguienteVencimiento();
+                lblMontoSiguienteCuota.Text = $"{total:c}";
+                lblVencimientoSiguienteCuota.Text = _service.GetSiguienteVencimiento();
                 txtDinero.Focus();
             }
             else
@@ -48,11 +46,12 @@ namespace Nacion.WebUI
                     txtDinero.Focus(); 
                     return;
                 }
-                Nacion.WebUI.NacionService.ResultadoSimulacion resultado = this.service.Simular(dinero);
-                lblCapitalAdelantado.Text = string.Format("{0:c}", Convert.ToDecimal(resultado.CapitalAdelantado));
+
+                var resultado = _service.Simular(dinero);
+                lblCapitalAdelantado.Text = $"{Convert.ToDecimal(resultado.CapitalAdelantado):c}";
                 lblCuotasAdelantadas.Text = resultado.NroCuotasAdelantadas;
-                lblDineroRestante.Text = string.Format("{0:c}", Convert.ToDecimal(resultado.DineroRestante));
-                lblInteresesAhorrados.Text = string.Format("{0:c}", Convert.ToDecimal(resultado.InteresesAdelantados));
+                lblDineroRestante.Text = $"{Convert.ToDecimal(resultado.DineroRestante):c}";
+                lblInteresesAhorrados.Text = $"{Convert.ToDecimal(resultado.InteresesAdelantados):c}";
                 lblNuevoVencimiento.Text = resultado.VencimientoActual;
                 lblSiguienteNroCuota.Text = resultado.NroSiguienteCuota;
                 txtDinero.Focus();

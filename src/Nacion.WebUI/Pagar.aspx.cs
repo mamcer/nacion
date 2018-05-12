@@ -1,13 +1,11 @@
 ﻿using System;
-using System.Web;
 using System.Web.UI;
-using System.Web.UI.WebControls;
 
 namespace Nacion.WebUI
 {
-    public partial class Pagar : System.Web.UI.Page
+    public partial class Pagar : Page
     {
-        private NacionService.Service service = new Nacion.WebUI.NacionService.Service();
+        private readonly NacionService.Service _service = new NacionService.Service();
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -21,16 +19,16 @@ namespace Nacion.WebUI
         private void ActualizarSiguienteCuota()
         {
             //Siguiente cuota
-            Nacion.WebUI.NacionService.Cuota cuota = this.service.GetSiguienteCuota();
+            var cuota = _service.GetSiguienteCuota();
             lblNroSiguienteCuota.Text = cuota.Nro.ToString();
             decimal total = cuota.Capital + cuota.Interes + cuota.Cargos + cuota.Impuestos;
-            lblMontoSiguienteCuota.Text = string.Format("{0:c}", total);
-            lblVencimientoSiguienteCuota.Text = this.service.GetSiguienteVencimiento();
+            lblMontoSiguienteCuota.Text = $"{total:c}";
+            lblVencimientoSiguienteCuota.Text = _service.GetSiguienteVencimiento();
         }
 
         protected void lnkPagar_Click(object sender, EventArgs e)
         {
-            service.PagarCuota(Convert.ToInt32(lblNroSiguienteCuota.Text));
+            _service.PagarCuota(Convert.ToInt32(lblNroSiguienteCuota.Text));
             ActualizarSiguienteCuota();
         }
 
@@ -49,10 +47,10 @@ namespace Nacion.WebUI
                     return;
                 }
                 int nroSiguienteCuota = Convert.ToInt32(lblNroSiguienteCuota.Text);
-                service.PagarCuota(nroSiguienteCuota);
+                _service.PagarCuota(nroSiguienteCuota);
                 for (int i = nroSiguienteCuota + 1; i < nroSiguienteCuota + cantidad + 1; i++)
                 {
-                    service.AdelantarCuota(i);
+                    _service.AdelantarCuota(i);
                 }
                 ActualizarSiguienteCuota();
             }
@@ -75,7 +73,7 @@ namespace Nacion.WebUI
                 int nroSiguienteCuota = Convert.ToInt32(lblNroSiguienteCuota.Text);
                 for (int i = nroSiguienteCuota; i < nroSiguienteCuota + cantidad; i++)
                 {
-                    service.AdelantarCuota(i);
+                    _service.AdelantarCuota(i);
                 }
                 ActualizarSiguienteCuota();
             }
@@ -98,7 +96,7 @@ namespace Nacion.WebUI
                 int nroSiguienteCuota = Convert.ToInt32(lblNroSiguienteCuota.Text);
                 for (int i = nroSiguienteCuota - 1; i > nroSiguienteCuota - cantidad - 1; i--)
                 {
-                    service.ResetearCuota(i);
+                    _service.ResetearCuota(i);
                 }
                 ActualizarSiguienteCuota();
             }

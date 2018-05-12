@@ -1,14 +1,8 @@
-﻿using System;
-using System.Web.UI;
-using System.Web.UI.WebControls;
+﻿using System.Web.UI;
 
 namespace Nacion.WebUI
 {
-    public partial class Cuotas : System.Web.UI.Page
+    public partial class Cuotas : Page
     {
-        protected void Page_Load(object sender, EventArgs e)
-        {
-
-        }
     }
 }
