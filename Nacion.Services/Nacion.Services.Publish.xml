@@ -1,0 +1,12 @@
+<publishData>
+  <publishTarget publishUrl="\\hades\c$\Inetpub\wwwroot\Nacion\service\">
+    <file relUrl="bin/Nacion.Services.pdb" publishTime="01/05/2009 23:35:33" />
+    <file relUrl="bin/Nacion.DataLayer.pdb" publishTime="01/05/2009 22:50:44" />
+    <file relUrl="bin/Nacion.Core.pdb" publishTime="01/05/2009 22:50:44" />
+    <file relUrl="Web.config" publishTime="01/04/2009 18:12:31" />
+    <file relUrl="bin/Nacion.Core.dll" publishTime="01/05/2009 22:50:44" />
+    <file relUrl="Service.asmx" publishTime="01/04/2009 18:17:49" />
+    <file relUrl="bin/Nacion.Services.dll" publishTime="01/05/2009 23:35:33" />
+    <file relUrl="bin/Nacion.DataLayer.dll" publishTime="01/05/2009 22:50:44" />
+  </publishTarget>
+</publishData>

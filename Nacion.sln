@@ -1,0 +1,74 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nacion.Test", "Nacion.Test\Nacion.Test.csproj", "{6E9EED4B-98A7-44E1-BCC1-64027944F266}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{E6BA1A77-6C2B-406C-ADF0-B50E7697D60B}"
+	ProjectSection(SolutionItems) = preProject
+		LocalTestRun.testrunconfig = LocalTestRun.testrunconfig
+		Nacion.vsmdi = Nacion.vsmdi
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nacion.Core", "Nacion.Core\Nacion.Core.csproj", "{F6A3B1DA-1FF8-4272-A744-C5408347A260}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nacion.DataLayer", "Nacion.DataLayer\Nacion.DataLayer.csproj", "{713276D9-219F-4BF1-B1DF-0407A7BAFF69}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nacion.WebUI", "Nacion.WebUI\Nacion.WebUI.csproj", "{42681ABF-E964-4248-9246-8150D9017EB5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nacion.Services", "Nacion.Services\Nacion.Services.csproj", "{B1B6AE92-A732-4C11-B28B-CEF662E97406}"
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 6
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://vmwin2003:8080/
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = Nacion.Core\\Nacion.Core.csproj
+		SccProjectName1 = Nacion.Core
+		SccLocalPath1 = Nacion.Core
+		SccProjectUniqueName2 = Nacion.DataLayer\\Nacion.DataLayer.csproj
+		SccProjectName2 = Nacion.DataLayer
+		SccLocalPath2 = Nacion.DataLayer
+		SccProjectUniqueName3 = Nacion.Services\\Nacion.Services.csproj
+		SccProjectName3 = Nacion.Services
+		SccLocalPath3 = Nacion.Services
+		SccProjectUniqueName4 = Nacion.Test\\Nacion.Test.csproj
+		SccProjectName4 = Nacion.Test
+		SccLocalPath4 = Nacion.Test
+		SccProjectUniqueName5 = Nacion.WebUI\\Nacion.WebUI.csproj
+		SccProjectName5 = Nacion.WebUI
+		SccLocalPath5 = Nacion.WebUI
+	EndGlobalSection
+	GlobalSection(TestCaseManagementSettings) = postSolution
+		CategoryFile = Nacion.vsmdi
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6E9EED4B-98A7-44E1-BCC1-64027944F266}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6E9EED4B-98A7-44E1-BCC1-64027944F266}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6E9EED4B-98A7-44E1-BCC1-64027944F266}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6E9EED4B-98A7-44E1-BCC1-64027944F266}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F6A3B1DA-1FF8-4272-A744-C5408347A260}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F6A3B1DA-1FF8-4272-A744-C5408347A260}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F6A3B1DA-1FF8-4272-A744-C5408347A260}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F6A3B1DA-1FF8-4272-A744-C5408347A260}.Release|Any CPU.Build.0 = Release|Any CPU
+		{713276D9-219F-4BF1-B1DF-0407A7BAFF69}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{713276D9-219F-4BF1-B1DF-0407A7BAFF69}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{713276D9-219F-4BF1-B1DF-0407A7BAFF69}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{713276D9-219F-4BF1-B1DF-0407A7BAFF69}.Release|Any CPU.Build.0 = Release|Any CPU
+		{42681ABF-E964-4248-9246-8150D9017EB5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{42681ABF-E964-4248-9246-8150D9017EB5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{42681ABF-E964-4248-9246-8150D9017EB5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{42681ABF-E964-4248-9246-8150D9017EB5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B1B6AE92-A732-4C11-B28B-CEF662E97406}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B1B6AE92-A732-4C11-B28B-CEF662E97406}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B1B6AE92-A732-4C11-B28B-CEF662E97406}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B1B6AE92-A732-4C11-B28B-CEF662E97406}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

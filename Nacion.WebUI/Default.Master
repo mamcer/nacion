@@ -1,0 +1,51 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Default.master.cs" Inherits="Nacion.WebUI.Default" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <script type="text/javascript">
+        function GetFechaActual() {
+            var mydate = new Date()
+            var year = mydate.getYear()
+            if (year < 1000)
+                year += 1900
+            var day = mydate.getDay()
+            var month = mydate.getMonth()
+            var daym = mydate.getDate()
+            if (daym < 10)
+                daym = "0" + daym
+            var dayarray = new Array("Domingo", "Lunes", "Martes", "Miercoles", "Jueves", "Viernes", "Sabado")
+            var montharray = new Array("Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre")
+            return dayarray[day] + " " + daym + " de " + montharray[month] + " de " + year;
+        }
+
+        function PageLoad() {
+            document.getElementById("fechaActual").innerHTML = GetFechaActual();
+        }
+    </script>
+</head>
+<body onload="PageLoad()">
+    <form id="form1" runat="server">
+    <div style="float:left">
+        <a class="link" href="Default.aspx">Resumen</a><a class="link" href="Cuotas.aspx">Cuotas</a><a class="link" href="Simulador.aspx">Simulador</a><a class="link" href="Pagar.aspx">Pagar</a><a class="link" href="Info.aspx">Infomación General</a> 
+    </div>
+    <div class="header">
+        <span id="fechaActual">Lalala</span>
+    </div>
+    <div style="border-top:1px solid #c9d7f1;font-size:1px;right: 0pt; margin-top:5px;margin-bottom:5px;"></div>
+    <div>
+        <asp:ContentPlaceHolder ID="BodyPlaceHolder" runat="server">
+        
+        </asp:ContentPlaceHolder>
+    </div>
+    <div style="border-top:1px solid #c9d7f1;font-size:1px;right: 0pt; margin-top:5px;margin-bottom:5px;"></div>
+    <div class="footer">
+        <span>©2009 - </span><a class="footer" href="http:\\www.mariomoreno.com.ar" target="_blank">Mario Moreno</a>
+    </div>
+    </form>
+</body>
+</html>

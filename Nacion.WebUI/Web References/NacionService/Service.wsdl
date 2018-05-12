@@ -1,0 +1,607 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="GetSiguienteCuota">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetSiguienteCuotaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetSiguienteCuotaResult" type="tns:Cuota" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="Cuota">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Nro" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Vencimiento" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="Capital" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="Interes" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="Cargos" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="Impuestos" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="Status" type="tns:StatusCuota" />
+        </s:sequence>
+      </s:complexType>
+      <s:simpleType name="StatusCuota">
+        <s:restriction base="s:string">
+          <s:enumeration value="Nueva" />
+          <s:enumeration value="Pagada" />
+          <s:enumeration value="Adelantada" />
+        </s:restriction>
+      </s:simpleType>
+      <s:element name="GetSiguienteVencimiento">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetSiguienteVencimientoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetSiguienteVencimientoResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTotalPagado">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetTotalPagadoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetTotalPagadoResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCantidadCuotasPagas">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetCantidadCuotasPagasResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetCantidadCuotasPagasResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCantidadCuotasAdelantadas">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetCantidadCuotasAdelantadasResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetCantidadCuotasAdelantadasResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetRestoPagar">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetRestoPagarResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetRestoPagarResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetVencimientoOriginal">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetVencimientoOriginalResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetVencimientoOriginalResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetVencimientoActual">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetVencimientoActualResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetVencimientoActualResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCuotas">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetCuotasResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetCuotasResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Simular">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="dinero" type="s:decimal" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SimularResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SimularResult" type="tns:ResultadoSimulacion" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ResultadoSimulacion">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="NroCuotasAdelantadas" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CapitalAdelantado" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="InteresesAdelantados" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="VencimientoActual" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="NroSiguienteCuota" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DineroRestante" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetInfoGeneral">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetInfoGeneralResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetInfoGeneralResult" type="tns:InfoGeneral" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="InfoGeneral">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="NroCliente" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="NroPrestamo" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="TasaTEM" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="TasaTNAV" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="PrimerVencimiento" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="UltimoVencimiento" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="Capital" type="s:decimal" />
+          <s:element minOccurs="0" maxOccurs="1" name="CBU" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="NroCajaAhorro" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="PagarCuota">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="nro" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PagarCuotaResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="AdelantarCuota">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="nro" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AdelantarCuotaResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="ResetearCuota">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="nro" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ResetearCuotaResponse">
+        <s:complexType />
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="GetSiguienteCuotaSoapIn">
+    <wsdl:part name="parameters" element="tns:GetSiguienteCuota" />
+  </wsdl:message>
+  <wsdl:message name="GetSiguienteCuotaSoapOut">
+    <wsdl:part name="parameters" element="tns:GetSiguienteCuotaResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetSiguienteVencimientoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetSiguienteVencimiento" />
+  </wsdl:message>
+  <wsdl:message name="GetSiguienteVencimientoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetSiguienteVencimientoResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetTotalPagadoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetTotalPagado" />
+  </wsdl:message>
+  <wsdl:message name="GetTotalPagadoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetTotalPagadoResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetCantidadCuotasPagasSoapIn">
+    <wsdl:part name="parameters" element="tns:GetCantidadCuotasPagas" />
+  </wsdl:message>
+  <wsdl:message name="GetCantidadCuotasPagasSoapOut">
+    <wsdl:part name="parameters" element="tns:GetCantidadCuotasPagasResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetCantidadCuotasAdelantadasSoapIn">
+    <wsdl:part name="parameters" element="tns:GetCantidadCuotasAdelantadas" />
+  </wsdl:message>
+  <wsdl:message name="GetCantidadCuotasAdelantadasSoapOut">
+    <wsdl:part name="parameters" element="tns:GetCantidadCuotasAdelantadasResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetRestoPagarSoapIn">
+    <wsdl:part name="parameters" element="tns:GetRestoPagar" />
+  </wsdl:message>
+  <wsdl:message name="GetRestoPagarSoapOut">
+    <wsdl:part name="parameters" element="tns:GetRestoPagarResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetVencimientoOriginalSoapIn">
+    <wsdl:part name="parameters" element="tns:GetVencimientoOriginal" />
+  </wsdl:message>
+  <wsdl:message name="GetVencimientoOriginalSoapOut">
+    <wsdl:part name="parameters" element="tns:GetVencimientoOriginalResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetVencimientoActualSoapIn">
+    <wsdl:part name="parameters" element="tns:GetVencimientoActual" />
+  </wsdl:message>
+  <wsdl:message name="GetVencimientoActualSoapOut">
+    <wsdl:part name="parameters" element="tns:GetVencimientoActualResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetCuotasSoapIn">
+    <wsdl:part name="parameters" element="tns:GetCuotas" />
+  </wsdl:message>
+  <wsdl:message name="GetCuotasSoapOut">
+    <wsdl:part name="parameters" element="tns:GetCuotasResponse" />
+  </wsdl:message>
+  <wsdl:message name="SimularSoapIn">
+    <wsdl:part name="parameters" element="tns:Simular" />
+  </wsdl:message>
+  <wsdl:message name="SimularSoapOut">
+    <wsdl:part name="parameters" element="tns:SimularResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetInfoGeneralSoapIn">
+    <wsdl:part name="parameters" element="tns:GetInfoGeneral" />
+  </wsdl:message>
+  <wsdl:message name="GetInfoGeneralSoapOut">
+    <wsdl:part name="parameters" element="tns:GetInfoGeneralResponse" />
+  </wsdl:message>
+  <wsdl:message name="PagarCuotaSoapIn">
+    <wsdl:part name="parameters" element="tns:PagarCuota" />
+  </wsdl:message>
+  <wsdl:message name="PagarCuotaSoapOut">
+    <wsdl:part name="parameters" element="tns:PagarCuotaResponse" />
+  </wsdl:message>
+  <wsdl:message name="AdelantarCuotaSoapIn">
+    <wsdl:part name="parameters" element="tns:AdelantarCuota" />
+  </wsdl:message>
+  <wsdl:message name="AdelantarCuotaSoapOut">
+    <wsdl:part name="parameters" element="tns:AdelantarCuotaResponse" />
+  </wsdl:message>
+  <wsdl:message name="ResetearCuotaSoapIn">
+    <wsdl:part name="parameters" element="tns:ResetearCuota" />
+  </wsdl:message>
+  <wsdl:message name="ResetearCuotaSoapOut">
+    <wsdl:part name="parameters" element="tns:ResetearCuotaResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ServiceSoap">
+    <wsdl:operation name="GetSiguienteCuota">
+      <wsdl:input message="tns:GetSiguienteCuotaSoapIn" />
+      <wsdl:output message="tns:GetSiguienteCuotaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSiguienteVencimiento">
+      <wsdl:input message="tns:GetSiguienteVencimientoSoapIn" />
+      <wsdl:output message="tns:GetSiguienteVencimientoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTotalPagado">
+      <wsdl:input message="tns:GetTotalPagadoSoapIn" />
+      <wsdl:output message="tns:GetTotalPagadoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCantidadCuotasPagas">
+      <wsdl:input message="tns:GetCantidadCuotasPagasSoapIn" />
+      <wsdl:output message="tns:GetCantidadCuotasPagasSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCantidadCuotasAdelantadas">
+      <wsdl:input message="tns:GetCantidadCuotasAdelantadasSoapIn" />
+      <wsdl:output message="tns:GetCantidadCuotasAdelantadasSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRestoPagar">
+      <wsdl:input message="tns:GetRestoPagarSoapIn" />
+      <wsdl:output message="tns:GetRestoPagarSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetVencimientoOriginal">
+      <wsdl:input message="tns:GetVencimientoOriginalSoapIn" />
+      <wsdl:output message="tns:GetVencimientoOriginalSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetVencimientoActual">
+      <wsdl:input message="tns:GetVencimientoActualSoapIn" />
+      <wsdl:output message="tns:GetVencimientoActualSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCuotas">
+      <wsdl:input message="tns:GetCuotasSoapIn" />
+      <wsdl:output message="tns:GetCuotasSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Simular">
+      <wsdl:input message="tns:SimularSoapIn" />
+      <wsdl:output message="tns:SimularSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetInfoGeneral">
+      <wsdl:input message="tns:GetInfoGeneralSoapIn" />
+      <wsdl:output message="tns:GetInfoGeneralSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PagarCuota">
+      <wsdl:input message="tns:PagarCuotaSoapIn" />
+      <wsdl:output message="tns:PagarCuotaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AdelantarCuota">
+      <wsdl:input message="tns:AdelantarCuotaSoapIn" />
+      <wsdl:output message="tns:AdelantarCuotaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ResetearCuota">
+      <wsdl:input message="tns:ResetearCuotaSoapIn" />
+      <wsdl:output message="tns:ResetearCuotaSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ServiceSoap" type="tns:ServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetSiguienteCuota">
+      <soap:operation soapAction="http://tempuri.org/GetSiguienteCuota" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSiguienteVencimiento">
+      <soap:operation soapAction="http://tempuri.org/GetSiguienteVencimiento" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTotalPagado">
+      <soap:operation soapAction="http://tempuri.org/GetTotalPagado" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCantidadCuotasPagas">
+      <soap:operation soapAction="http://tempuri.org/GetCantidadCuotasPagas" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCantidadCuotasAdelantadas">
+      <soap:operation soapAction="http://tempuri.org/GetCantidadCuotasAdelantadas" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRestoPagar">
+      <soap:operation soapAction="http://tempuri.org/GetRestoPagar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetVencimientoOriginal">
+      <soap:operation soapAction="http://tempuri.org/GetVencimientoOriginal" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetVencimientoActual">
+      <soap:operation soapAction="http://tempuri.org/GetVencimientoActual" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCuotas">
+      <soap:operation soapAction="http://tempuri.org/GetCuotas" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Simular">
+      <soap:operation soapAction="http://tempuri.org/Simular" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetInfoGeneral">
+      <soap:operation soapAction="http://tempuri.org/GetInfoGeneral" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PagarCuota">
+      <soap:operation soapAction="http://tempuri.org/PagarCuota" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AdelantarCuota">
+      <soap:operation soapAction="http://tempuri.org/AdelantarCuota" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ResetearCuota">
+      <soap:operation soapAction="http://tempuri.org/ResetearCuota" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ServiceSoap12" type="tns:ServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetSiguienteCuota">
+      <soap12:operation soapAction="http://tempuri.org/GetSiguienteCuota" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSiguienteVencimiento">
+      <soap12:operation soapAction="http://tempuri.org/GetSiguienteVencimiento" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTotalPagado">
+      <soap12:operation soapAction="http://tempuri.org/GetTotalPagado" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCantidadCuotasPagas">
+      <soap12:operation soapAction="http://tempuri.org/GetCantidadCuotasPagas" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCantidadCuotasAdelantadas">
+      <soap12:operation soapAction="http://tempuri.org/GetCantidadCuotasAdelantadas" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRestoPagar">
+      <soap12:operation soapAction="http://tempuri.org/GetRestoPagar" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetVencimientoOriginal">
+      <soap12:operation soapAction="http://tempuri.org/GetVencimientoOriginal" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetVencimientoActual">
+      <soap12:operation soapAction="http://tempuri.org/GetVencimientoActual" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCuotas">
+      <soap12:operation soapAction="http://tempuri.org/GetCuotas" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Simular">
+      <soap12:operation soapAction="http://tempuri.org/Simular" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetInfoGeneral">
+      <soap12:operation soapAction="http://tempuri.org/GetInfoGeneral" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PagarCuota">
+      <soap12:operation soapAction="http://tempuri.org/PagarCuota" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AdelantarCuota">
+      <soap12:operation soapAction="http://tempuri.org/AdelantarCuota" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ResetearCuota">
+      <soap12:operation soapAction="http://tempuri.org/ResetearCuota" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Service">
+    <wsdl:port name="ServiceSoap" binding="tns:ServiceSoap">
+      <soap:address location="http://localhost:4075/Service.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ServiceSoap12" binding="tns:ServiceSoap12">
+      <soap12:address location="http://localhost:4075/Service.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

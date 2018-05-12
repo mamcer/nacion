@@ -1,0 +1,25 @@
+﻿a.link
+{
+color:#00c !important;
+padding-right:10px;
+}
+
+body
+{
+font-family:Verdana;
+font-size:small;
+}
+
+div.footer
+{
+text-align: center;
+font-family: Verdana;
+font-size: x-small;
+}
+
+div.header
+{
+text-align:right;
+padding: 0pt 0pt 4px;
+font-size: 84%;
+}

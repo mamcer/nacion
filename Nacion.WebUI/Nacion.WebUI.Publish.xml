@@ -1,0 +1,22 @@
+<publishData>
+  <publishTarget publishUrl="\\hades\c$\inetpub\wwwroot\Nacion\">
+    <file relUrl="bin/Nacion.Core.dll" publishTime="01/04/2009 15:34:31" />
+    <file relUrl="NoAccess.htm" publishTime="01/04/2009 17:26:06" />
+    <file relUrl="Web.config" publishTime="01/05/2009 01:34:16" />
+    <file relUrl="bin/Nacion.DataLayer.pdb" publishTime="01/04/2009 15:34:31" />
+    <file relUrl="GenericErrorPage.htm" publishTime="01/04/2009 17:24:59" />
+    <file relUrl="bin/Nacion.Core.pdb" publishTime="01/04/2009 15:34:31" />
+    <file relUrl="Simulador.aspx" publishTime="01/05/2009 00:50:19" />
+    <file relUrl="App_Themes/Default/Default.skin" publishTime="01/05/2009 00:17:51" />
+    <file relUrl="Info.aspx" publishTime="01/05/2009 01:07:58" />
+    <file relUrl="Pagar.aspx" publishTime="01/05/2009 23:44:37" />
+    <file relUrl="bin/Nacion.WebUI.pdb" publishTime="01/05/2009 23:42:29" />
+    <file relUrl="Cuotas.aspx" publishTime="01/05/2009 00:14:44" />
+    <file relUrl="App_Themes/Default/default.css" publishTime="01/04/2009 17:43:49" />
+    <file relUrl="Default.Master" publishTime="01/05/2009 00:11:25" />
+    <file relUrl="Default.aspx" publishTime="01/04/2009 21:57:36" />
+    <file relUrl="bin/Nacion.DataLayer.dll" publishTime="01/04/2009 15:34:31" />
+    <file relUrl="FileNotFound.htm" publishTime="01/04/2009 17:26:42" />
+    <file relUrl="bin/Nacion.WebUI.dll" publishTime="01/05/2009 23:42:29" />
+  </publishTarget>
+</publishData>
