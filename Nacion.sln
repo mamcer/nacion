@@ -1,13 +1,9 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 10.00
-# Visual Studio 2008
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27428.2043
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nacion.Test", "Nacion.Test\Nacion.Test.csproj", "{6E9EED4B-98A7-44E1-BCC1-64027944F266}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{E6BA1A77-6C2B-406C-ADF0-B50E7697D60B}"
-	ProjectSection(SolutionItems) = preProject
-		LocalTestRun.testrunconfig = LocalTestRun.testrunconfig
-		Nacion.vsmdi = Nacion.vsmdi
-	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nacion.Core", "Nacion.Core\Nacion.Core.csproj", "{F6A3B1DA-1FF8-4272-A744-C5408347A260}"
 EndProject
@@ -18,30 +14,6 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nacion.Services", "Nacion.Services\Nacion.Services.csproj", "{B1B6AE92-A732-4C11-B28B-CEF662E97406}"
 EndProject
 Global
-	GlobalSection(TeamFoundationVersionControl) = preSolution
-		SccNumberOfProjects = 6
-		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
-		SccTeamFoundationServer = http://vmwin2003:8080/
-		SccLocalPath0 = .
-		SccProjectUniqueName1 = Nacion.Core\\Nacion.Core.csproj
-		SccProjectName1 = Nacion.Core
-		SccLocalPath1 = Nacion.Core
-		SccProjectUniqueName2 = Nacion.DataLayer\\Nacion.DataLayer.csproj
-		SccProjectName2 = Nacion.DataLayer
-		SccLocalPath2 = Nacion.DataLayer
-		SccProjectUniqueName3 = Nacion.Services\\Nacion.Services.csproj
-		SccProjectName3 = Nacion.Services
-		SccLocalPath3 = Nacion.Services
-		SccProjectUniqueName4 = Nacion.Test\\Nacion.Test.csproj
-		SccProjectName4 = Nacion.Test
-		SccLocalPath4 = Nacion.Test
-		SccProjectUniqueName5 = Nacion.WebUI\\Nacion.WebUI.csproj
-		SccProjectName5 = Nacion.WebUI
-		SccLocalPath5 = Nacion.WebUI
-	EndGlobalSection
-	GlobalSection(TestCaseManagementSettings) = postSolution
-		CategoryFile = Nacion.vsmdi
-	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
@@ -70,5 +42,11 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {37449D53-5B21-4C7B-9737-60F5842DCF68}
+	EndGlobalSection
+	GlobalSection(TestCaseManagementSettings) = postSolution
+		CategoryFile = Nacion.vsmdi
 	EndGlobalSection
 EndGlobal

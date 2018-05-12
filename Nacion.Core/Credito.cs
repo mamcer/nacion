@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Data;
-
 using Nacion.DataLayer;
 
 namespace Nacion.Core
