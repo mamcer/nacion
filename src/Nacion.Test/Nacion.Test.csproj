@@ -73,9 +73,6 @@
     <Compile Include="NacionTest.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="AuthoringTests.txt" />
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\Nacion.Core\Nacion.Core.csproj">
       <Project>{F6A3B1DA-1FF8-4272-A744-C5408347A260}</Project>
       <Name>Nacion.Core</Name>
