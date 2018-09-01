@@ -4,7 +4,7 @@ SETLOCAL
 @REM  ----------------------------------------------------------------------------
 @REM  build.cmd
 @REM
-@REM  author: m4mcer@gmail.com
+@REM  author: m4mc3r@gmail.com
 @REM  ----------------------------------------------------------------------------
 
 set start_time=%time%
