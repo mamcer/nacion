@@ -43,7 +43,7 @@ namespace Nacion.Data
             {
                 if (_connString == null)
                 {
-                    _connString = "Data Source=Hades\\Hades;Initial Catalog=Nacion;UID=sa;pwd=paladin22;Timeout=10";
+                    _connString = "Data Source=Hades\\Hades;Initial Catalog=Nacion;UID=sa;pwd=sa;Timeout=10";
                 }
                 return _connString;
             }
