@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nacion.WebUI", "src\Nacion.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nacion.Services", "src\Nacion.Services\Nacion.Services.csproj", "{B1B6AE92-A732-4C11-B28B-CEF662E97406}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExpirationEstimate", "src\EstimarFechasVencimiento\ExpirationEstimate.csproj", "{940EF408-C0BC-475C-921F-5D684675A1DA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{B1B6AE92-A732-4C11-B28B-CEF662E97406}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B1B6AE92-A732-4C11-B28B-CEF662E97406}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B1B6AE92-A732-4C11-B28B-CEF662E97406}.Release|Any CPU.Build.0 = Release|Any CPU
+		{940EF408-C0BC-475C-921F-5D684675A1DA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{940EF408-C0BC-475C-921F-5D684675A1DA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{940EF408-C0BC-475C-921F-5D684675A1DA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{940EF408-C0BC-475C-921F-5D684675A1DA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
