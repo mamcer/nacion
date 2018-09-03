@@ -5,6 +5,8 @@ A .NET WeForms application from 2008
 
 In `original` branch you will find the original source code for this application. In `master` an upgraded, refactored version.
 
+> More details about why I published this project in [this blog post](https://mamcer.github.io/2018-09-02-i-cleaned-up-my-virtual-basement/)
+
 ## Description 
 
 In 2008 we bought our first appartment with my wife. We pay it using our savings and a mortgage. This web application allowed us to see general information about the mortgage and the current fee to pay, number of fees already paid, etc. And a simulator to estimate the interest earned if we pay in advance a certain amount of fees or how much money do we needed to pay a certain amount of fees in advance.
